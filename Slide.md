@@ -1,4 +1,4 @@
-'''
+'
 \documentclass{beamer}
 \usepackage[UTF8]{ctexcap}
 \usebeamercolor{beaver}
@@ -122,4 +122,4 @@
 %	现在才53
 %	\end{frame}
 \end{document}
-'''
+'
