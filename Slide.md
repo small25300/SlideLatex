@@ -1,125 +1,90 @@
 ```
-\documentclass{beamer}
+\documentclass[slidestop,compress,mathserif]{beamer}
 \usepackage[UTF8]{ctexcap}
-\usebeamercolor{beaver}
-\usetheme{AnnArbor}
+%\usepackage{xcolor}%用于混合颜色
+%\xdefinecolor{lavendar}{rgb}{0.8,0.6,1}
+\xdefinecolor{olive}{cmyk}{0.64,0,0.95,0.4}
+\colorlet{olive}{red!60!black}
+%\colorlet{structure}{red!60!black}中的structure指的是预先定义的颜色，用后面的新配的颜色替换，如上面这一句将自己之前预先定义的olive导航颜色用red!60!black替换
+\usecolortheme[named=olive]{structure}
 
-\title{我的第一张幻灯片}
-\subtitle{小试牛刀}
+%\usepackage[bars]{beamerthemetree} % Beamer主题样式v 2.2
+\usetheme{Antibes} % Beamer主题样式v 3.0
+\usecolortheme{lily} % Beamer颜色主题样式
+%\useoutertheme[subsection=false,footline=authortitle]{miniframes}
+
+%\beamertemplateshadingbackground{yellow!5!white}{blue!5}
+%\beamertemplategridbackground[1cm]
+
+\usestructuretemplate{\color{structure}}{} 
+%\beamertemplateshadingbackground{yellow!50}{magenta!50}
+\title{我的Beamer学习}
 \author{王小龙}
-\institute{西北师范大学知行学院}
-\date{2019年6月4日}
+\institute{兰州交通大学}
+%\colorlet{structure}{red!60!black}
 \begin{document}
-	% First Slide
-	\frame{\titlepage}
-	\section*{Outlines}
-	\subsection{Part I: Review of Previous Lecture}
-	\frame
-	{
-		\frametitle{Outline of Part I}
-		\tableofcontents[part=1]
-	}
-	\subsection{Part II: Today’s Lecture}
-	\frame{
-		\frametitle{Outline of Part II}
-		\tableofcontents[part=2]
-	}
-	\part{Review of Previous Lecture}
-	\frame{\partpage}
-	\section[Previous Lecture]{Summary of the Previous Lecture}
-	\subsection{Topics}
-	\frame{...}
-	\subsection{Learning Objectives}
-	\frame{...}
-	\part{Today’s Lecture}
-	\frame{\partpage}
-	\section{Topic A}
-	\frame{\tableofcontents[currentsection]}
-	\subsection{Foo}
-	\frame{...}
-	\section{Topic B}
-	\frame{\tableofcontents[currentsection]}
-	\subsection{bar}
-	\frame{...}
+	\begin{frame} % Cover slide
+		\titlepage
+	\end{frame}
+	\begin{frame}%{First Slide}{副标题}
+		\frametitle{First Slide}
+		\framesubtitle{副标题}
+		手机的肌肤设计的就是打飞机了空间
+	\end{frame}
+	\begin{frame}
+	空白帧，没有标题
+	\end{frame}
 	
 	
-
-%	\begin{frame}
-%	\titlepage
-%	\end{frame}
-%	\section{Android简介}
-%	\begin{frame}[allowframebreaks,allowdisplaybreaks]{A Long Equation}
-%	\begin{align}
-%	\zeta(2) &= 1 + 1/4 + 1/9 + \cdots \\
-%	&= ... \\
-%	...
-%	&= \pi^2/6.
-%	\end{align}
-%	\end{frame}
-%	
-%	\begin{frame}
-%		\begin{itemize}
-%			\item
-%			Shown from first slide on.
-%			\pause
-%			\item
-%			Shown from second slide on.
-%			\begin{itemize}
-%				\item
-%				Shown from second slide on.
-%				\pause
-%				\item
-%				Shown from third slide on.
-%			\end{itemize}
-%			\item
-%			Shown from third slide on.
-%			\pause
-%			\item
-%			Shown from fourth slide on.
-%		\end{itemize}
-%		%Shown from fourth slide on.
-%		\begin{itemize}
-%			\onslide
-%			\item
-%			Shown from first slide on.
-%			\pause
-%			\item
-%			Shown from fifth slide on.
-%		\end{itemize}
-%	\end{frame}
-%	\begin{frame}
-%	\textbf{This line is bold on all three slides.}
-%	\textbf<2>{This line is bold only on the second slide.}
-%	\textbf<3>{This line is bold only on the third slide.}
-%	\end{frame}
-%	\begin{frame}
-%	\only<1>{Initial text.}
-%	\only<2>{Replaced by this on second slide.}
-%	\only<3>{Replaced again by this on third slide.}
-%	\end{frame}
-%
-%	\begin{frame}
-%	Shown on first slide.
-%	\onslide<2-3>
-%	Shown on second and third slide.
-%	\begin{itemize}
-%		\item
-%		Still shown on the second and third slide.
-%		\onslide+<4->
-%		\item
-%		Shown from slide 4 on.
-%	\end{itemize}
-%	Shown from slide 4 on.
-%	\onslide
-%	Shown on all slides.
-%	\end{frame}
-%	
-%	\begin{frame}{目录}
-%	\tableofcontents
-%	\end{frame}
-%	\section{总结}
-%	\begin{frame}{Slide two}{测试2}
-%	现在才53
-%	\end{frame}
-\end{document}
+	\begin{frame}
+	
+	\begin{enumerate}
+	
+	\item 第一项
+	\item 第而项
+	\item 第三项
+	\end{enumerate}
+	\end{frame}
+	
+	\begin{frame}
+	\begin{itemize}
+	\item 第一项
+	\item 第而项
+	\item 第三项
+	\end{itemize}
+	\end{frame}
+	
+	\begin{frame}
+	\begin{description}
+	\item [红色：]热情、活泼
+	\item [蓝泽：]蓝猫、大家法律框架
+	\item [审理：]三等奖、是大家分开了
+	\end{description}
+	\end{frame}
+	\section{FourthSection}
+	\begin{frame}
+	\begin{block}{重要内容}
+	今天答辩顺利通过
+	\end{block}
+	\end{frame}
+	
+	\begin{frame}
+	\begin{alertblock}{提醒重要内容}
+	今天答辩顺利通过
+	\end{alertblock}
+	\end{frame}
+	
+	\begin{frame}
+	\begin{exampleblock}{重要案例}
+	今天答辩顺利通过\\
+	今天工作很多
+	\end{exampleblock}
+	\end{frame}
+	
+	\begin{frame}
+	\begin{theorem}
+	微积分基本公式：$\int_{a}^{b}f(x)\mathrm{d}x=F(b)-F(a)$
+	\end{theorem}
+	\end{frame}
+\end{document}%也可以用 \frame{\titlepage}}代替 (在Beamer v 2.2 宏包中) 
 ```
