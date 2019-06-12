@@ -1,5 +1,5 @@
 # Beamer制作Slides网址：
-- http://static.latexstudio.net/wp-content/uploads/2014/12/beamer_guide-cnbyl00l.pdf （Beamer V3.0 黄旭华翻译版本）
+- http://static.latexstudio.net/wp-content/uploads/2014/12/beamer_guide-cnbyl00l.pdf （Beamer V3.0 黄旭华翻译版）
 - https://ddswhu.me/resource/LaTeX/beamer_tutorial_2017.pdf （Beamer中文简介+一点爬虫）
 - https://blog.csdn.net/chichoxian/article/details/18922839
 - http://ishare.iask.sina.com.cn/f/22884558.html (详细设计的PPT)
