@@ -6,6 +6,8 @@
 - https://blog.csdn.net/chichoxian/article/details/19113649 (补充上面的PPT)
 # Beamer Presentation Template修改案例：
 - https://tex.stackovernet.com/cn/q/88997
+# Beamer制作Slide时的常用索引：
+- http://www.voidcn.com/article/p-kjgieueh-bpu.html
 # Beamer整体主题网址：
 - http://deic.uab.es/~iblanes/beamer_gallery/
 - http://www.hartwork.org/beamer-theme-matrix/
