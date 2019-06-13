@@ -88,3 +88,41 @@
 	\end{frame}
 \end{document}%也可以用 \frame{\titlepage}}代替 (在Beamer v 2.2 宏包中) 
 ```
+```
+\documentclass{beamer}
+\usepackage[UTF8]{ctexcap}
+\usetheme{AnnArbor}
+%\usebeameroutertheme{split}
+\title{我的第一张幻灯片}
+\subtitle{小试牛刀}
+\author{王小龙}
+\institute{西北师范大学知行学院}
+\date{2019年6月4日}
+%\useoutertheme{infolines}
+%\useinnertheme{rectangles}
+\begin{document}
+	\begin{frame}
+		\titlepage
+	\end{frame}
+	%========设置frametitle剧中============%
+	\setbeamercolor{frametitle}{fg=red}
+	\setbeamerfont{frametitle}{series=\bfseries}
+	\setbeamertemplate{frametitle}
+	{
+%		\fbox{%
+%			\parbox{\textwidth}{%
+%				\begin{centering}
+%					\vspace*{5ex}\insertframetitle\par
+%				\end{centering}
+%			}%
+%		}
+		\begin{textblock}[1]
+			\color{blue}{\insertframetitle}
+		\end{textblock}
+	}
+	%==============end====================%
+	\begin{frame}{目\quad 录}
+		\tableofcontents
+	\end{frame}
+\end{document}
+```
