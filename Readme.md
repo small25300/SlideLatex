@@ -3,6 +3,7 @@
 - https://wzbtech.com/tech/beamer.html
 ## tcolorbox说明：
 - https://liam.page/2016/07/22/using-the-tcolorbox-package-to-create-a-new-theorem-environment/
+- http://static.latexstudio.net/article/2019/0426/transparent-shadows.pdf （画带有阴影的文本框说明）
 ## Beamer制作Slides网址：
 - http://static.latexstudio.net/wp-content/uploads/2014/12/beamer_guide-cnbyl00l.pdf （Beamer V3.0 黄旭华翻译版）
 - https://ddswhu.me/resource/LaTeX/beamer_tutorial_2017.pdf （Beamer中文简介+一点爬虫）
