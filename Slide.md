@@ -91,7 +91,19 @@
 ```
 \documentclass{beamer}
 \usepackage[UTF8]{ctexcap}
+\usepackage[skins, breakable, theorems,fitting,most]{tcolorbox}% 用来生成各式各样的框
+%\usepackage[absolute ,overlay]{textpos}
+%\usepackage{tikz}
+%定义一些表示长度的命令
+%\newlength{\boxw}
+%\newlength{\boxh}
+%\newlength{\boxroundness}%表示文本盒圆角的半径大小
+%\newlength{\shadowsize}%表示文本盒阴影的宽度
+%\newlength{\tmpa}%在带有阴影的文本盒的绘制过程中起到一个中间变量的作用。
+\usepackage{xcolor}
+%\includeonlyframes{current}
 \usetheme{AnnArbor}
+
 %\usebeameroutertheme{split}
 \title{我的第一张幻灯片}
 \subtitle{小试牛刀}
@@ -100,29 +112,71 @@
 \date{2019年6月4日}
 %\useoutertheme{infolines}
 %\useinnertheme{rectangles}
+
+
 \begin{document}
 	\begin{frame}
 		\titlepage
 	\end{frame}
+
 	%========设置frametitle剧中============%
 	\setbeamercolor{frametitle}{fg=red}
 	\setbeamerfont{frametitle}{series=\bfseries}
 	\setbeamertemplate{frametitle}
 	{
-%		\fbox{%
-%			\parbox{\textwidth}{%
-%				\begin{centering}
-%					\vspace*{5ex}\insertframetitle\par
-%				\end{centering}
-%			}%
-%		}
-		\begin{textblock}[1]
-			\color{blue}{\insertframetitle}
-		\end{textblock}
+		
+		\begin{centering}%将整个文本框居中
+			\begin{frametitlebox}
+				\centering\insertframetitle\par
+			\end{frametitlebox}
+		\end{centering}
+		
 	}
 	%==============end====================%
-	\begin{frame}{目\quad 录}
-		\tableofcontents
+	\newtcolorbox{frametitlebox}{width=5cm, colback = yellow!85!red,colframe=red!5!white}%设置文本框命令及其参数
+
+	\begin{frame}\frametitle{目\quad 录}
+		\tableofcontents		
 	\end{frame}
+
+	\section{第一部分}
+	\begin{frame}\frametitle{FirstSection}
+	\tableofcontents[currentsection, currentsubsection]
+		\begin{tcolorbox}[title = {I Love Sophia}]
+			This is a \textbf{tcolorbox} with title.
+			\tcblower
+			Here, you see the lower part of the box.
+		\end{tcolorbox}
+	\end{frame}
+
+	\section{第二部分}
+	\begin{frame}
+		\begin{tcolorbox}[title=Lower separated] This is the upper part.
+			\tcblower
+			This is the lower part.
+		\end{tcolorbox}
+	
+		\begin{tcolorbox}[sidebyside,title=Lower separated]
+			This is the upper part.
+			\tcblower
+			This is the lower part.
+		\end{tcolorbox}
+	\end{frame}	
+
+	\section{第三部分}
+	\begin{frame}
+		\begin{tcolorbox}[upperbox=invisible,colback=white]
+			This is a \textbf{tcolorbox} (but invisible).
+			\tcblower
+			This is the lower part.\\
+			sdkljk
+		\end{tcolorbox}
+	\end{frame}
+	
+	\frame{\frametitle{Outline}\tableofcontents[currentsection]}
+	
+	\AtBeginSection[]{
+	\frame{\frametitle{Outline}\tableofcontents[currentsection]}
+	}
 \end{document}
 ```
