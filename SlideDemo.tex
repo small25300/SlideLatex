@@ -1,0 +1,106 @@
+\documentclass{beamer}
+\usepackage[UTF8]{ctexcap}
+\usepackage[skins, breakable, theorems,fitting,most]{tcolorbox}% 用来生成各式各样的框
+
+\usepackage{xcolor}
+
+\usetheme{AnnArbor}
+
+
+\title{我的第一张幻灯片}
+\subtitle{小试牛刀}
+\author{王小龙}
+\institute{西北师范大学知行学院}
+\date{2019年6月4日}
+%===================目录格式定义设置==========================%
+\newcommand{\beamertemplatenumberedsectiontocMyself}{
+	\usetemplatetocsection[20!averagebackgroundcolor]
+	{\leavevmode\leftskip=6.5em\vspace{0ex}\color{beamerstructure}\inserttocsectionnumber.\hspace{1em}\inserttocsection\par}
+	
+	\usetemplatetocsubsection[20!averagebackgroundcolor]
+	{\leavevmode\leftskip=2em\color{black}\rlap{\hskip-2em\inserttocsectionnumber.\inserttocsubsectionnumber}\inserttocsubsection\par}
+}
+%=====================end===========================%
+\begin{document}
+	\begin{frame}[plain]
+		\titlepage
+	\end{frame}
+
+	%========设置frametitle居中============%
+	%定义一个新的tcolorbox环境命令frametitlebox，画出一个文本框
+	\newtcolorbox{frametitlebox}{width=10cm, colback = yellow!87!red,colframe=red!5!white}
+	\setbeamercolor{frametitle}{fg=red}
+	\setbeamerfont{frametitle}{series=\bfseries}
+	\setbeamertemplate{frametitle}
+	{	
+		\begin{centering}%将整个文本框居中
+				\vspace{1ex}
+			\begin{frametitlebox}% 调用之前定义的新的tcolorbox环境命令frametitlebox
+				\centering\insertframetitle\par
+			\end{frametitlebox}
+		\end{centering}	
+	}	
+	%==============end====================%
+	
+	%================catalog(目录) frame============%
+	\setbeamerfont{section in toc}{%修改目录中字的大小等格式
+		family=\rmfamily,series=\bfseries,size=\Large}
+	\begin{frame}[shrink,squeeze,c]\frametitle{目\quad 录}
+		\beamertemplatenumberedsectiontocMyself
+		\tableofcontents[hideallsubsections]
+	\end{frame}
+	%=============================end===================%
+	
+	%========每一个section前面插入一个section目录=========%
+	\AtBeginSection[]
+	{
+		\begin{frame}
+		\beamertemplatenumberedsectiontocMyself
+		\tableofcontents[currentsection,hideallsubsections]
+	\end{frame}
+	}
+	%==================end===================%	
+	
+	\section{第一部分}
+	\subsection{部分}
+	\begin{frame}
+		我的内容
+	\end{frame}
+
+	\section{第二部分}
+	\subsection{部分}
+%		\AtBeginSection[]{
+%		\begin{frame}<beamer>
+%		\frametitle{\sectiontitle}\tableofcontents[
+%		sectionstyle=show/shaded,
+%		subsectionstyle=show/show/shaded]
+%	\end{frame}
+%}
+	\begin{frame}
+		\begin{tcolorbox}[title=Lower separated] This is the upper part.
+			\tcblower
+			This is the lower part.
+		\end{tcolorbox}
+	
+		\begin{tcolorbox}[sidebyside,title=Lower separated]
+			This is the upper part.
+			\tcblower
+			This is the lower part.
+		\end{tcolorbox}
+	\end{frame}	
+
+	\section{第三部分}
+	\begin{frame}
+		\begin{tcolorbox}[upperbox=invisible,colback=white]
+			This is a \textbf{tcolorbox} (but invisible).
+			\tcblower
+			This is the lower part.\\
+			sdkljk
+		\end{tcolorbox}
+	\end{frame}
+	\section{第si部分}
+	\section{第wu部分}
+	\section{第liu部分}
+	\section{第qe部分}
+	
+\end{document}
