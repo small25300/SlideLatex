@@ -4,6 +4,7 @@
 ## Beamer自定义命令环境参考（几乎需要的所有环境）
 - http://homepages.inf.ed.ac.uk/stg/talks/BEAMEREXAMPLES/PASTA2004/beamerbasetemplates.sty
 - http://mirror.las.iastate.edu/tex-archive/macros/latex/contrib/beamer/base/themes/font/beamerfontthemedefault.sty
+- https://tug.dk/FontCatalogue/ （英文常用字体）
 ## tcolorbox说明：
 - https://liam.page/2016/07/22/using-the-tcolorbox-package-to-create-a-new-theorem-environment/
 - http://static.latexstudio.net/article/2019/0426/transparent-shadows.pdf （画带有阴影的文本框说明）
