@@ -1,35 +1,35 @@
 \documentclass{beamer}
 \usepackage[UTF8]{ctexcap}
 \usepackage[skins, breakable, theorems,fitting,most]{tcolorbox}% 用来生成各式各样的框
-
+\setCJKfamilyfont{songti}[AutoFakeBold={3}]{SimSun}
+\setmainfont{Times New Roman}
 \usepackage{xcolor}
 
 \usetheme{AnnArbor}
+%\setmainfont{Microsoft YaHei}
 
-
-\title{我的第一张幻灯片}
-\subtitle{小试牛刀}
+\title{ACM大会汇报}
+%\subtitle{小试牛刀}
 \author{王小龙}
-\institute{西北师范大学知行学院}
-\date{2019年6月4日}
+\institute{电信系}
+\date{2019年6月20日}
 %===================目录格式定义设置==========================%
 \newcommand{\beamertemplatenumberedsectiontocMyself}{
 	\usetemplatetocsection[20!averagebackgroundcolor]
 	{\leavevmode\leftskip=6.5em\vspace{0ex}\color{beamerstructure}\inserttocsectionnumber.\hspace{1em}\inserttocsection\par}
 	
 	\usetemplatetocsubsection[20!averagebackgroundcolor]
-	{\leavevmode\leftskip=2em\color{black}\rlap{\hskip-2em\inserttocsectionnumber.\inserttocsubsectionnumber}\inserttocsubsection\par}
+	{\vspace*{2ex}\leavevmode\leftskip=2em\color{green!45!black}\rlap{\hskip-2em\inserttocsectionnumber.\inserttocsubsectionnumber}\inserttocsubsection\par}
 }
 %=====================end===========================%
 \begin{document}
 	\begin{frame}[plain]
 		\titlepage
 	\end{frame}
-
 	%========设置frametitle居中============%
 	%定义一个新的tcolorbox环境命令frametitlebox，画出一个文本框
 	\newtcolorbox{frametitlebox}{width=10cm, colback = yellow!87!red,colframe=red!5!white}
-	\setbeamercolor{frametitle}{fg=red}
+%	\setbeamercolor{frametitle}{fg=red}
 	\setbeamerfont{frametitle}{series=\bfseries}
 	\setbeamertemplate{frametitle}
 	{	
@@ -45,37 +45,81 @@
 	%================catalog(目录) frame============%
 	\setbeamerfont{section in toc}{%修改目录中字的大小等格式
 		family=\rmfamily,series=\bfseries,size=\Large}
+	\setbeamerfont{subsection in toc}{%修改目录中字的大小等格式
+		family=\rmfamily,series=\bfseries,size=\large}
+	
+	
 	\begin{frame}[shrink,squeeze,c]\frametitle{目\quad 录}
 		\beamertemplatenumberedsectiontocMyself
 		\tableofcontents[hideallsubsections]
 	\end{frame}
-	%=============================end===================%
+	%======================end===================%
 	
-	%========每一个section前面插入一个section目录=========%
+	%========每一个section前面插入一个section目录和subsection===%
 	\AtBeginSection[]
 	{
-		\begin{frame}
-		\beamertemplatenumberedsectiontocMyself
-		\tableofcontents[currentsection,hideallsubsections]
-	\end{frame}
+		\begin{frame}[shrink,squeeze,c]
+			\beamertemplatenumberedsectiontocMyself
+			\tableofcontents[currentsection,hideallsubsections]
+		\end{frame}
+	}
+	\AtBeginSubsection[]
+	{
+		\begin{frame}[shrink,squeeze,c]
+			\beamertemplatenumberedsectiontocMyself
+			\tableofcontents[sectionstyle=show/hide,subsectionstyle=show/shaded/hide]
+		\end{frame}
 	}
 	%==================end===================%	
 	
-	\section{第一部分}
-	\subsection{部分}
+	\section{第一天学术报告安排}
+	\subsection[Feasible Computation]{What are the Limits of Feasible Computation-Leslie Valiant，Havard University}
+	
+%	\setbeamerfont{items}{family=\sffamily}
+%	\setbeamerfont{subitem}{family=\sffamily}
+%	\setbeamerfont{subsubitem}{family=\rmfamily}
+%	Keys are: family, series, shape, size, parent
 	\begin{frame}
-		我的内容
+		\begin{itemize}
+%			\setlength{\itemsep}{0.5cm}
+			\setbeamertemplate{itemize items}[square]
+			\fontfamily{pbk}\Large
+			\item Algorithms and Complexity
+			
+			\begin{itemize}
+%				\setlength{\itemsep}{0.2cm}
+				\setbeamertemplate{itemize items}[circle]
+				\zihao{-4}
+				\item Order in Application Space
+				\begin{tcolorbox}[colback = white, colframe = blue!70!red]
+					\zihao{5}Computer science is possible because applications are not isolated, but have common themes.(e.g. linear algebra very widely used.)
+				\end{tcolorbox}
+				
+				\item Reductions among problems
+				\begin{tcolorbox}[colback = white, colframe = blue!70!red]
+					\zihao{5}Such as ploynomial time reductions, holographic transformations.
+				\end{tcolorbox}
+				\item Clusters of Equivalent Applications
+				\begin{tcolorbox}[colback = white, colframe = blue!70!red]
+					\zihao{5}Such as NP-complete problems.
+				\end{tcolorbox}
+			\end{itemize}
+			\item  Physics
+			\item  Computer Science
+		\end{itemize}
 	\end{frame}
 
+	\subsection{测试}
+	\subsection{成功}
+	\subsection{你好}
+	\subsection{厉害}
+	\subsection{风水}
+	\subsection{没有}
+	\subsection{哈哈}
+	
+
 	\section{第二部分}
-	\subsection{部分}
-%		\AtBeginSection[]{
-%		\begin{frame}<beamer>
-%		\frametitle{\sectiontitle}\tableofcontents[
-%		sectionstyle=show/shaded,
-%		subsectionstyle=show/show/shaded]
-%	\end{frame}
-%}
+	\subsection{条件}
 	\begin{frame}
 		\begin{tcolorbox}[title=Lower separated] This is the upper part.
 			\tcblower
